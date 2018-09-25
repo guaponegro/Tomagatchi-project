@@ -1,10 +1,30 @@
+$("#title").append("<h1>Tomagatchi Game</h1>");
+
+$("#enterName").on("click", () => {
+  const $tomagatchiName = $("input").val();
+    $(".display").prepend(`Name: ${$tomagatchiName}  `);
+    $(".name-tomagatchi").remove();
+}) 
+
 $("#startButton").on("click", (e) => {
   startGame();
 });
 
 
-
 startGame = () => {
+  // Scoreboard
+  $(".display").append("<h2 id='hunger'>Hunger:( 0 )</h2>");
+  $(".display").append("<h2 id='bed'>Sleepiness:( 0 )</h2>");
+  $(".display").append("<h2 id='play'>Boredom:( 0 )</h2>");
+  $(".display").append("<h3 id='age'>Age: 1</h3>");
+  $(".display").append("<h3 id='timer'>Time: 1</h3>");
+
+  // Buttons
+  $(".actionButtons").append("<button id='feedButton'>Feed Me!</button>");
+  $(".actionButtons").append("<button id='playButton'>Play With Me!</button>");
+  $(".actionButtons").append("<button id='lightButton'>Turn Off The Lights!</button>");
+  
+
   class Pet {
     constructor(name, age, hunger, sleepiness, boredom, time){
       this.name = name;
@@ -73,7 +93,6 @@ startGame = () => {
       //if levels get to 10 or more game over reload page
       if (tomagatchi.sleepiness >= 10){
         window.alert("Game Over");
-        location.reload();
       }
       if (tomagatchi.time % 7 === 0){
         tomagatchi.boredom = tomagatchi.boredom + 2;

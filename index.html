@@ -11,27 +11,20 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <div><h1>Tomagatchi Game</h1></div>
+    <div id="title"></div>
 
-    <div class="display">
-        <h2 id="hunger">Hunger:( 0 )</h2>
-        <h2 id="bed">Sleepiness:( 0 )</h2>
-        <h2 id="play">Boredom:( 0 )</h2>
-        <h3 id="age">Age: 1</h3>
-        <h3 id="timer">Time: 0</h3>
+    <div class="name-tomagatchi">
+        <h3>Name Your Tomagatchi:</h3>
+        <input type="text">
+        <button id="enterName">Enter</button>
     </div>
+
+    <div class="display" id="petname"></div>
 
 
     <div id="actionButtons">
-        <button id="startButton">Start Game!</button>
-        <button id="feedButton">Feed Me!</button>
-        <button id="playButton">Play With Me!</button>
-        <button id="lightButton">Turn Off The Lights!</button>
+        <button id='startButton'>Start Game!</button>
     </div>
-
-    <form>
-        <button id="reload" location.reload(forceGet)>Restart</button>
-    </form>
 
     
     
