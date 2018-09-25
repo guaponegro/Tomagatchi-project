@@ -20,9 +20,9 @@ startGame = () => {
   $(".display").append("<h3 id='timer'>Time: 1</h3>");
 
   // Buttons
-  $(".actionButtons").append("<button id='feedButton'>Feed Me!</button>");
-  $(".actionButtons").append("<button id='playButton'>Play With Me!</button>");
-  $(".actionButtons").append("<button id='lightButton'>Turn Off The Lights!</button>");
+  $("<button id='feedButton'>Feed Me!</button>").appendTo("#actionButtons");
+  $("<button id='playButton'>Play With Me!</button>").appendTo("#actionButtons");
+  $("<button id='lightButton'>Turn Off The Lights!</button>").appendTo("#actionButtons");
   
 
   class Pet {
