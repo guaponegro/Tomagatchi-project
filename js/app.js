@@ -80,7 +80,7 @@ startGame = () => {
     death = (reason) => {
       clearInterval(timer);
       $("img").remove();
-      $("#title").append("<img src='images/Dead_Goku_pic.jpg'>");
+      $(".titleHeader").append("<img src='images/Dead_Goku_pic.jpg'>");
       setTimeout(() => {
         if(reason === "hunger"){
           alert("Damn Starvin Marvin, you dead!");
@@ -135,7 +135,7 @@ startGame = () => {
         // location.reload();
       }
       if (tomagatchi.age === 2){
-        $("#movement").attr("src", "images/Normal Goku gif.gif");
+        $("#movement").attr("src", "images/Normal_Goku_3.gif");
       }
       if (tomagatchi.age === 3){
         $("#movement").attr("src", "images/SSJ Goku gif.gif");
