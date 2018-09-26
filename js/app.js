@@ -1,8 +1,8 @@
 $("#title").append("<h1>Tomagatchi Game</h1>");
 
-$("#enterName").on("click", () => {
+$("#enterButton").on("click", () => {
   const $tomagatchiName = $("input").val();
-    $(".display").prepend(`Name: ${$tomagatchiName}  `);
+    $(".display").prepend(`<h3>Name: ${$tomagatchiName}  </h3>`);
     $(".name-tomagatchi").remove();
 }) 
 
@@ -22,8 +22,8 @@ startGame = () => {
 
   // Buttons
   $("<button id='feedButton'>Feed Me!</button>").appendTo("#actionButtons");
-  $("<button id='playButton'>Play With Me!</button>").appendTo("#actionButtons");
-  $("<button id='lightButton'>Turn Off The Lights!</button>").appendTo("#actionButtons");
+  $("<button id='playButton'>Come Play!</button>").appendTo("#actionButtons");
+  $("<button id='lightButton'>Lights Out!</button>").appendTo("#actionButtons");
   
 
   class Pet {
@@ -104,7 +104,7 @@ startGame = () => {
   };
 
 
-    // $("img").replaceWith()
+    
   // Time for the Timer!
   const timer = setInterval(() =>{
       tomagatchi.time++;
@@ -118,9 +118,6 @@ startGame = () => {
         // location.reload();
       }
       //if levels get to 10 or more game over reload page
-      // if (tomagatchi.sleepiness >= 10){
-      //   window.alert("Game Over");
-      // }
       if (tomagatchi.time % 4 === 0){
         tomagatchi.boredom = tomagatchi.boredom + 2;
       }
@@ -140,7 +137,7 @@ startGame = () => {
       if (tomagatchi.age === 2){
         $("#movement").attr("src", "images/Normal Goku gif.gif");
       }
-      if (tomagatchi.age === 5){
+      if (tomagatchi.age === 3){
         $("#movement").attr("src", "images/SSJ Goku gif.gif");
       }
     

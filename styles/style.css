@@ -1,0 +1,88 @@
+body {
+    background-image: url("https://i.imgur.com/HpW7gcg.jpg");
+    background-repeat: no-repeat;
+    background-size: 1400px 970px;
+    background-attachment: scroll;
+    font-family: 'Anton', sans-serif;
+}
+
+.display {
+    text-align: right;
+}
+
+#actionButtons {
+    text-align: right;
+}
+
+#feedButton {
+    width: 150px;
+    height: auto;
+    font-family: 'Anton', sans-serif;
+    font-size: 20px;
+    border-radius: 15px;
+}
+
+#playButton {
+    width: 150px;
+    height: auto;
+    font-family: 'Anton', sans-serif;
+    font-size: 20px;
+    border-radius: 15px;
+}
+
+#lightButton {
+    width: 150px;
+    height: auto;
+    font-family: 'Anton', sans-serif;
+    font-size: 20px;
+    border-radius: 15px;
+}
+
+#startButton {
+    width: 150px;
+    height: auto;
+    font-family: 'Anton', sans-serif;
+    font-size: 20px;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+#enterButton {
+    width: 150px;
+    height: 45px;
+    padding: auto;
+    font-family: 'Anton', sans-serif;
+    font-size: 20px;
+    border-radius: 15px;
+}
+#movement {
+    height: 500px;
+    width: 400px;
+}
+
+h1 {
+    text-align: center;
+    border-style: solid;
+    width: 300px;
+    margin: 10px auto;
+}
+
+.name-tomagatchi {
+    text-align: center;
+    border-style: solid;
+    margin-left: 950px;
+    padding: 8px; 
+    font-size: 30px;
+}
+
+#titleFont {
+    margin-bottom: 10px;
+}
+
+input {
+    height: 40px;
+    width: 150px;
+    font-family: 'Anton', sans-serif;
+}
+
+

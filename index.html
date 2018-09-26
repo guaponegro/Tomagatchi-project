@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    
+
     <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.js"></script>
@@ -15,14 +16,17 @@
 </head>
 <body>
     <div id="title"></div>
+    
+    <div id="background"></div>
 
-    <img id="movement" src="images/Kid Goku picture.jpg">
+    
+
 
 
     <div class="name-tomagatchi">
-        <h3>Name Your Tomagatchi:</h3>
+        <h3 id="titleFont">Name Your Tomagatchi:</h3>
         <input type="text">
-        <button id="enterName">Enter</button>
+        <button id="enterButton">Enter</button>
     </div>
 
     <div class="display" id="petname"></div>
@@ -32,6 +36,7 @@
         <button id='startButton'>Start Game!</button>
     </div>
 
+    <img id="movement" src="images/Kid_Goku_Transparent.png">
     
     
     <script src="js/app.js"></script>
