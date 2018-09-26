@@ -7,6 +7,7 @@ $("#enterName").on("click", () => {
 }) 
 
 $("#startButton").on("click", (e) => {
+  $("img").attr("src", "images/Kid Goku gif.gif")
   startGame();
 });
 
@@ -67,46 +68,80 @@ startGame = () => {
   $("#feedButton").on("click", (e) => {
       tomagatchi.eat()
     }); 
-    
-    
+
     $("#lightButton").on("click", (e) => {
       tomagatchi.rest()
     });
     
-    
     $("#playButton").on("click", (e) => {
       tomagatchi.playMore()
     });
-    
-  
+
+    death = (reason) => {
+      clearInterval(timer);
+      $("img").remove();
+      $("#title").append("<img src='images/Dead_Goku_pic.jpg'>");
+      setTimeout(() => {
+        if(reason === "hunger"){
+          alert("Damn Starvin Marvin, you dead!");
+        } 
+        if(reason === "boredom"){
+          alert("You died of boredom! Game Over");
+        }
+        if(reason === "sleepiness"){
+          alert("RIP Van Winkle");
+        }
+    },100)
+      console.log("image works");
+    }
+
+
+    const moveGoku = () => {
+      console.log('Please move gif!');
+      $("#movement").velocity({"translateX": "900px"}, 1500, () => { 
+          $("#movement").velocity({"translateX": "100px"}, 1500) 
+       })
+  };
+
+
+    // $("img").replaceWith()
   // Time for the Timer!
   const timer = setInterval(() =>{
       tomagatchi.time++;
       //increases hunger level by 1 every 5 seconds
-      if(tomagatchi.time % 5 === 0){
+      if(tomagatchi.time % 2 === 0){
         tomagatchi.hunger = tomagatchi.hunger + 1;
       }
       if(tomagatchi.hunger >= 10){
-        window.alert("Game Over");
-        location.reload();
+        death("hunger");
+        return;
+        // location.reload();
       }
       //if levels get to 10 or more game over reload page
-      if (tomagatchi.sleepiness >= 10){
-        window.alert("Game Over");
-      }
-      if (tomagatchi.time % 7 === 0){
+      // if (tomagatchi.sleepiness >= 10){
+      //   window.alert("Game Over");
+      // }
+      if (tomagatchi.time % 4 === 0){
         tomagatchi.boredom = tomagatchi.boredom + 2;
       }
       if(tomagatchi.boredom >= 10){
-        window.alert("Game Over");
-        location.reload();
+        death("boredom");
+        return;
+        // location.reload();
       }
-      if (tomagatchi.time % 9 === 0){
-        tomagatchi.sleepiness = tomagatchi.sleepiness + 3;
+      if (tomagatchi.time % 6 === 0){
+        tomagatchi.sleepiness = tomagatchi.sleepiness + 4;
       }
       if (tomagatchi.sleepiness >= 10){
-        window.alert("Game Over");
-        location.reload();
+        death("sleepiness");
+        return;
+        // location.reload();
+      }
+      if (tomagatchi.age === 2){
+        $("#movement").attr("src", "images/Normal Goku gif.gif");
+      }
+      if (tomagatchi.age === 5){
+        $("#movement").attr("src", "images/SSJ Goku gif.gif");
       }
     
       $('#timer').text('Time: ' + tomagatchi.time + 's');
@@ -118,6 +153,7 @@ startGame = () => {
       $('#play').text("Boredom:( " + tomagatchi.boredom + " )");
       //this called the update age method 
       tomagatchi.updateAge();
+      moveGoku();
     }, 1000)
 
     $("#startButton").remove();
