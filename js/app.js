@@ -22,8 +22,9 @@ startGame = () => {
 
   // Buttons
   $("<button id='feedButton'>Feed Me!</button>").appendTo("#actionButtons");
-  $("<button id='playButton'>Come Play!</button>").appendTo("#actionButtons");
   $("<button id='lightButton'>Lights Out!</button>").appendTo("#actionButtons");
+  $("<button id='playButton'>Come Play!</button>").appendTo("#actionButtons");
+  
   
 
   class Pet {
@@ -35,19 +36,26 @@ startGame = () => {
       this.boredom = boredom;
       this.time = 0;
       }
+      
       eat() {
         //makes button click hunger method - 1.
-        this.hunger--
+        if(this.hunger >= 0){
+          this.hunger--;
+        }
       }
       
       rest() {
         //makes button click rest method - 1.
-        this.sleepiness--
+        if(this.sleepiness >= 0){
+          this.sleepiness--;
+        }
       }
       
       playMore() {
         //makes button click play method - 1.
-       this.boredom--
+       if(this.boredom >= 0){
+        this.boredom--;
+       }
       }
       
       updateAge() {
@@ -83,13 +91,13 @@ startGame = () => {
       $(".titleHeader").append("<img src='images/Dead_Goku_pic.jpg'>");
       setTimeout(() => {
         if(reason === "hunger"){
-          alert("Damn Starvin Marvin, you dead!");
+          alert("Should've gotten some food from Chi-Chi. Game Over!");
         } 
         if(reason === "boredom"){
-          alert("You died of boredom! Game Over");
+          alert("Where's Vegeta when you need him?!?! Game Over!");
         }
         if(reason === "sleepiness"){
-          alert("RIP Van Winkle");
+          alert("Wish me back with the Dragonballs! Game Over!");
         }
     },100)
       console.log("image works");
